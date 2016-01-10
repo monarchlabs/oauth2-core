@@ -5,7 +5,11 @@ Complete, compliant and well tested module for implementing an OAuth2 Server/Pro
 ## Installation
 
 ```
-npm install oauth2-server
+add to bower.json::
+
+"dependencies": {
+  "oauth2-core": "https://github.com/buck20two/oauth2-core.git"
+ }
 ```
 
 ## Quick Start
@@ -15,7 +19,7 @@ The module provides two middlewares, one for authorization and routing, another 
 ```js
 var express = require('express'),
     bodyParser = require('body-parser'),
-    oauthserver = require('oauth2-server');
+    oauthserver = require('./bower_components/oauth2-core');
 
 var app = express();
 
