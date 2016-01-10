@@ -5,7 +5,11 @@ Complete, compliant and well tested module for implementing an OAuth2 Server/Pro
 ## Installation
 
 ```
-npm install oauth2-server
+add to bower.json::
+
+"dependencies": {
+  "oauth2-core": "https://github.com/buck20two/oauth2-core.git"
+ }
 ```
 
 ## Quick Start
