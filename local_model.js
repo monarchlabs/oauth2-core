@@ -19,7 +19,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   model = module.exports;
 
-mongoose.createConnection('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/test');
 var secret = process.env.AES_KEY; //keep this key somewhere
 
 //
