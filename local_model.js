@@ -90,7 +90,7 @@ var OAuthUsersSchema = new Schema({
 });
 
 OAuthUsersSchema.plugin(encrypt, {
-    key: secret,
+    secret: secret,
     encryptedFields: ['password']
 });
 
