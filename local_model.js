@@ -19,7 +19,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     model = module.exports;
 
-mongoose.connect('mongodb://localhost:27017/test');
+//mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://test:test@ds041394.mongolab.com:41394/heroku_3jdqk89w');
 var secret = process.env.AES_KEY; //keep this key somewhere
 
 //
