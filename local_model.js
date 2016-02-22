@@ -33,8 +33,8 @@ var OAuthAccessTokensSchema = new Schema({
     clientId: {
         type: String
     },
-    userId: {
-        type: String
+    user: {
+        type: Object
     },
     expires: {
         type: Date
@@ -150,13 +150,13 @@ model.grantTypeAllowed = function(clientId, grantType, callback) {
     callback(false, true);
 };
 
-model.saveAccessToken = function(token, clientId, expires, userId, callback) {
-    console.log('in saveAccessToken (token: ' + token + ', clientId: ' + clientId + ', userId: ' + userId + ', expires: ' + expires + ')');
+model.saveAccessToken = function(token, clientId, expires, user, callback) {
+    console.log('in saveAccessToken (token: ' + token + ', clientId: ' + clientId + ', userId: ' + user + ', expires: ' + expires + ')');
 
     var accessToken = new OAuthAccessTokensModel({
         accessToken: token,
         clientId: clientId,
-        userId: userId,
+        user: user,
         expires: expires
     });
 
@@ -174,7 +174,7 @@ model.getUser = function(username, password, callback) {
     }, function(err, user) {
         if (err) return callback(err);
         if (user.password === password) {
-            return callback(null, user._id);
+            return callback(null, user);
         } else {
             return callback(err);
         }
