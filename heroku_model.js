@@ -56,7 +56,7 @@ var OAuthUsersSchema = new Schema({
   email: { type: String, default: '' }
 });
 
-OAuthUsersSchema.plugin(encrypt, {key : secret, encryptedFields : ['password']});
+OAuthUsersSchema.plugin(encrypt, {secret : secret, encryptedFields : ['password']});
 
 mongoose.model('OAuthAccessTokens', OAuthAccessTokensSchema);
 mongoose.model('OAuthRefreshTokens', OAuthRefreshTokensSchema);
