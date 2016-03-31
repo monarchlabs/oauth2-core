@@ -22,7 +22,7 @@ var mongoose = require('mongoose'),
 var db_user = process.env.DB_USER;
 var db_password = process.env.DB_PASSWORD;
 var db_name = process.env.DB_NAME;
-mongoose.connect('mongodb://' + db_user + ':' + db_password + '@ds041394.mongolab.com:41394/'+ db_name);
+mongoose.connect('mongodb://' + db_user + ':' + db_password + '@ds019668.mlab.com:19668/'+ db_name);
 var secret = process.env.AES_KEY; //keep this key somewhere
 
 //
