@@ -154,7 +154,7 @@ model.grantTypeAllowed = function(clientId, grantType, callback) {
 };
 
 model.saveAccessToken = function(token, clientId, expires, user, callback) {
-    console.log('in saveAccessToken (token: ' + token + ', clientId: ' + clientId + ', userId: ' + userId + ', expires: ' + expires + ')');
+    console.log('in saveAccessToken (token: ' + token + ', clientId: ' + clientId + ', user: ' + user + ', expires: ' + expires + ')');
 
     var accessToken = new OAuthAccessTokensModel({
         accessToken: token,
@@ -177,7 +177,7 @@ model.getUser = function(username, password, callback) {
     }, function(err, user) {
         if (err) return callback(err);
         if (user.password === password) {
-            return callback(null, user._id);
+            return callback(null, user);
         } else {
             return callback(err);
         }
